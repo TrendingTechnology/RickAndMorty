@@ -131,7 +131,7 @@ const Charachter = (props: RouteComponentProps<{ id?: string }>) => {
 
                   <div className="pt-10 mx-10 md:mx-auto">
                     <span className="my-3 flex justify-center items-center text-xl font-medium">
-                      Chapters that {response.name} featured on{" "}
+                      Chapters that {response.name} featured on
                     </span>
 
                     {errorEpisodes ? (
