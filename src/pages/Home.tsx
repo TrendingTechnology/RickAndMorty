@@ -38,7 +38,7 @@ function Home() {
   };
 
   return (
-    <div className='flex flex-col h-screen items-center justify-center text-white bg-gradient-to-br from-gray-600 via-teal-700 to-gray-800'>
+    <div className='flex flex-col h-screen items-center justify-center bg-red-100'>
       <div className='flex flex-col items-center'>
         <Table data={data} />
         <div className='w-11/12 flex items-center justify-between my-5'>
