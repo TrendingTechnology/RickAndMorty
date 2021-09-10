@@ -40,8 +40,9 @@ function Home() {
   return (
     <div className='flex flex-col h-screen items-center justify-center bg-red-100'>
       <div className='flex flex-col items-center'>
+        <h1 className='py-10 font-semibold text-2xl'>Rick and Morty Charchters</h1>
         <Table data={data} />
-        <div className='w-11/12 flex items-center justify-between my-5'>
+        <div className='w-full flex items-center space-x-5 justify-between my-5'>
           <Button variant='black' className='bg-red-400' onClick={prevPageHandler}>
             Prev
           </Button>
