@@ -71,6 +71,10 @@ For the api, I used (rickandmortyapi)[https://rickandmortyapi.com/].
 
 #### Get all charachters
 
+
+You can access the list of characters by using the ```/character``` endpoint.
+
+
 ```http
   GET https://rickandmortyapi.com/api/character
 ```
@@ -119,6 +123,7 @@ You should get the response like this.
 
 
 ### Get a single character
+
 
 You can get a single character by adding the id as a parameter: ```/character/2```
 
