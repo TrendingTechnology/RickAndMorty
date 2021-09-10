@@ -88,9 +88,9 @@ const Charachter = () => {
   };
 
   return (
-    <div className='bg-red-100 min-h-screen w-full'>
+    <div className='bg-red-100 min-h-screen min-w-screen'>
       <div className='p-5 cursor-pointer' onClick={handleHomePage}>
-        <ImArrowLeft className='w-10 h-6' />
+        <ImArrowLeft className='w-10 h-6 fixed' />
       </div>
       {loading ? (
         <div className='w-full flex items-center justify-center py-10'>
@@ -111,11 +111,13 @@ const Charachter = () => {
           )}
           <div>
             {response && (
-              <div className='flex flex-col items-center justify-center w-full mx-5'>
-                <h2 className='my-10 text-2xl font-medium'>{response?.name}</h2>
+              <div className='flex flex-col items-center justify-center mx-10 md:mx-5'>
+                <h2 id='title' className='my-10 text-2xl font-medium'>
+                  {response?.name}
+                </h2>
 
                 <div className='hover:animate-pulse'>
-                  <img src={response?.image} alt={response?.name} />
+                  <img src={response?.image} alt={response?.name} loading='lazy' />
                 </div>
                 <div className='my-10 flex flex-col justify-center space-y-3'>
                   <CharDetail data={response?.species} title='Species: ' />
