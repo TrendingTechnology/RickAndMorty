@@ -15,7 +15,7 @@ const Table: React.FC<TableProps> = ({ data }) => {
   return (
     <div className='w-full flex justify-center'>
       {data?.length ? (
-        <table className='border border-black'>
+        <table className='border-2 border-black'>
           <thead className='p-2 uppercase'>
             <th className=''>Id</th>
             <th>Name</th>
