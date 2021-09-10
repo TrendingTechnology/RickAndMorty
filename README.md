@@ -159,3 +159,10 @@ You should get the response like this.
     "created": "2017-11-04T18:50:21.651Z"
   }
 ```
+
+
+## Tech Stack
+
+**Client:** React, Typescript, React Router, TailwindCSS, React icons, React-loader-spinner
+
+ 
