@@ -5,8 +5,9 @@ This app shows all of the Rick and Morty charachters.
 ## Demo
 
 You can see the demo here:
-<!-- https://memory-game-ivory-theta.vercel.app/
- -->
+
+https://rick-and-morty-two-wheat.vercel.app/
+
 ## Installation
 
 npm:
