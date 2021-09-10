@@ -9,6 +9,7 @@ function Home() {
 
   const [page, setPage] = useState<number>(1);
 
+  // Get all charachters data
   const getData = async (page = 1) => {
     await axios
       .get<DataTypes>(`/character/?page=${page}`)
