@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import Button from "../components/Button/Button"
 import Table from "../components/AllCharsTable/AllCharsTable"
 import useAllChars from "../hooks/useAllChars"
+import Loader from "react-loader-spinner"
 
 function Home() {
   const [page, setPage] = useState<number>(1)
@@ -28,7 +29,20 @@ function Home() {
         <h1 className="py-10 font-semibold text-2xl">
           Rick and Morty Charchters
         </h1>
-        <Table data={data} />
+        {error ? (
+          <span>{error}</span>
+        ) : loading ? (
+          <Loader
+            type="Puff"
+            color="#00BFFF"
+            height={100}
+            width={100}
+            timeout={3000} //3 secs
+          />
+        ) : (
+          data && <Table data={data} />
+        )}
+
         <div className="w-full flex items-center space-x-5 justify-between my-5">
           <Button
             variant="black"
