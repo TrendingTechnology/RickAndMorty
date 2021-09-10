@@ -8,12 +8,7 @@ import CharDetail from "../components/CharDetail/CharDetail"
 import useCharLocation from "../hooks/useCharLocation"
 import useCharOrigin from "../hooks/useCharOrigin"
 import useEpisodes from "../hooks/useEpisodes"
-
-type EpisodesType = {
-  id: number
-  name: string
-  date: string
-}
+import CharTable from "../components/CharTable/CharTable"
 
 const Charachter = (props: RouteComponentProps<{ id?: string }>) => {
   const [episodes, setEpisodes] = useState<string[]>([])
@@ -142,33 +137,7 @@ const Charachter = (props: RouteComponentProps<{ id?: string }>) => {
                     {errorEpisodes ? (
                       <span>{errorEpisodes}</span>
                     ) : (
-                      episodesData && (
-                        <table className="border border-black">
-                          <thead className="p-2 uppercase">
-                            <th className="">Id</th>
-                            <th>Name</th>
-                            <th>Date</th>
-                          </thead>
-                          <tbody className="p-2">
-                            {episodesData?.map(
-                              (item: EpisodesType, i: number) => (
-                                <tr
-                                  className="text-center cursor-pointer"
-                                  key={item?.id}
-                                >
-                                  <td className="bg-blue-400">{item.id}</td>
-                                  <td className="bg-yellow-500">
-                                    {item?.name}
-                                  </td>
-                                  <td className="bg-yellow-600">
-                                    {item?.date}
-                                  </td>
-                                </tr>
-                              )
-                            )}
-                          </tbody>
-                        </table>
-                      )
+                      episodesData && <CharTable data={episodesData} />
                     )}
                   </div>
                 </div>
