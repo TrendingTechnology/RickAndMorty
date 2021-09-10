@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot test snapshot test Home page 1`] = `
+<div
+  className="flex flex-col h-screen items-center justify-center bg-red-100"
+>
+  <div
+    className="flex flex-col items-center"
+  >
+    <h1
+      className="py-10 font-semibold text-2xl"
+    >
+      Rick and Morty Charchters
+    </h1>
+    <Table
+      data={Array []}
+    />
+    <div
+      className="w-full flex items-center space-x-5 justify-between my-5"
+    >
+      <Button
+        className="bg-red-400"
+        onClick={[Function]}
+        variant="black"
+      >
+        Prev
+      </Button>
+      <span
+        className="text-xl "
+        id="page"
+      >
+        page : 
+        1
+      </span>
+      <Button
+        className="bg-blue-500"
+        onClick={[Function]}
+        variant="black"
+      >
+        Next
+      </Button>
+    </div>
+  </div>
+</div>
+`;
