@@ -166,3 +166,13 @@ You should get the response like this.
 **Client:** React, Typescript, React Router, TailwindCSS, React icons, React-loader-spinner
 
  
+
+
+## Screenshots
+
+![App Screenshot](./home.png)
+
+
+![charachter](./charachter.jpeg)
+
+  
