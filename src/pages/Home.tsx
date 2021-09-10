@@ -1,28 +1,13 @@
-import axios from "axios"
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import Button from "../components/Button/Button"
-import Table from "../components/Table/Table"
-import { Character, DataTypes } from "../interfaces/types"
+import Table from "../components/AllCharsTable/AllCharsTable"
+import useAllChars from "../hooks/useAllChars"
 
 function Home() {
-  const [data, setData] = useState<Character[]>([])
-
   const [page, setPage] = useState<number>(1)
 
   // Get all charachters data
-  const getData = async (page = 1) => {
-    await axios
-      .get<DataTypes>(`/character/?page=${page}`)
-
-      .then((res) => {
-        setData(res.data.results)
-      })
-      .catch((err) => console.log(err))
-  }
-
-  useEffect(() => {
-    getData(page)
-  }, [page])
+  const { data, error, loading } = useAllChars(page)
 
   const nextPageHandler = () => {
     setPage((prev) => prev + 1)
@@ -52,7 +37,9 @@ function Home() {
           >
             Prev
           </Button>
-          <span className="text-xl ">{page}</span>
+          <span id="page" className="text-xl ">
+            Page: {page}
+          </span>
           <Button
             variant="black"
             className="bg-blue-500"
