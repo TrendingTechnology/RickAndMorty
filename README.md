@@ -68,13 +68,11 @@ yarn test
 
 ## API Reference
 
-For the api, I used (rickandmortyapi)[https://rickandmortyapi.com/]. 
+For the api, I used (rickandmortyapi)[https://rickandmortyapi.com/].
 
 #### Get all charachters
 
-
-You can access the list of characters by using the ```/character``` endpoint.
-
+You can access the list of characters by using the `/character` endpoint.
 
 ```http
   GET https://rickandmortyapi.com/api/character
@@ -122,12 +120,9 @@ You should get the response like this.
   }
 ```
 
-
 ### Get a single character
 
-
-You can get a single character by adding the id as a parameter: ```/character/2```
-
+You can get a single character by adding the id as a parameter: `/character/2`
 
 You should get the response like this.
 
@@ -160,19 +155,12 @@ You should get the response like this.
   }
 ```
 
-
 ## Tech Stack
 
 **Client:** React, Typescript, React Router, TailwindCSS, React icons, React-loader-spinner
-
- 
-
 
 ## Screenshots
 
 ![App Screenshot](./home.png)
 
-
 ![charachter](./charachter.jpeg)
-
-  

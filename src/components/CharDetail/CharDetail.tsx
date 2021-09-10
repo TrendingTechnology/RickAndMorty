@@ -1,13 +1,18 @@
-import React from 'react';
+import React from "react"
 
 interface CharDetailProps {
-  list?: boolean;
-  data: string | number;
-  title: string;
-  className?: React.HTMLAttributes<HTMLSpanElement> | string;
+  list?: boolean
+  data: string | number
+  title: string
+  className?: React.HTMLAttributes<HTMLSpanElement> | string
 }
 
-const CharDetail: React.FC<CharDetailProps> = ({ list = false, data, title, className }) => {
+const CharDetail: React.FC<CharDetailProps> = ({
+  list = false,
+  data,
+  title,
+  className,
+}) => {
   return (
     <>
       {list ? (
@@ -20,7 +25,7 @@ const CharDetail: React.FC<CharDetailProps> = ({ list = false, data, title, clas
         </span>
       )}
     </>
-  );
-};
+  )
+}
 
-export default CharDetail;
+export default CharDetail
