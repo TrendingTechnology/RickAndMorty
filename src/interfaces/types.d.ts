@@ -46,4 +46,14 @@ interface OriginTypes {
   type: string;
 }
 
-export { DataTypes, Character, LocationTypes, OriginTypes };
+interface EpisodeTypes {
+  air_date: string;
+  characters: string[];
+  created: Date;
+  episode: string;
+  id: number;
+  name: string;
+  url: string;
+}
+
+export { DataTypes, Character, LocationTypes, OriginTypes, EpisodeTypes };
