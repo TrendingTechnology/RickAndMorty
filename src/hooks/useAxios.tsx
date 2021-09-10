@@ -30,7 +30,11 @@ const useAxios = (id: number) => {
   };
 
   useEffect(() => {
-    fetchData(id);
+    if (id) {
+      fetchData(id);
+    } else {
+      setError('There is no id');
+    }
   }, [id]);
 
   // custom hook returns value
