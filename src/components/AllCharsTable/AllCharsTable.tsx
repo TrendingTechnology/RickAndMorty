@@ -23,7 +23,7 @@ const Table: React.FC<TableProps> = ({ data }) => {
             <th>species</th>
           </thead>
           <tbody className="p-2">
-            {data?.map((item: Character, i: number) => (
+            {data?.map((item: Character) => (
               <tr
                 className="text-center cursor-pointer"
                 key={item?.id}
