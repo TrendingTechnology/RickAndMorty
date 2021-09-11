@@ -49,7 +49,7 @@ const Character = (props: RouteComponentProps<{ id?: string }>) => {
             color="#00BFFF"
             height={100}
             width={100}
-            timeout={3000} //3 secs
+            timeout={3000}
           />
         </div>
       ) : (
@@ -61,7 +61,7 @@ const Character = (props: RouteComponentProps<{ id?: string }>) => {
           )}
           <div>
             {response && (
-              <div className="flex flex-col items-center justify-center mx-10 md:mx-0">
+              <div className="char-layout_details">
                 <h2 id="title" className="my-10 text-2xl font-medium">
                   {response?.name}
                 </h2>
@@ -73,7 +73,7 @@ const Character = (props: RouteComponentProps<{ id?: string }>) => {
                     loading="lazy"
                   />
                 </div>
-                <div className="my-10 flex flex-col justify-center space-y-3">
+                <div className="char-layout_details_texts">
                   <CharDetail data={response?.species} title="Species: " />
                   <CharDetail data={response?.gender} title="Gender: " />
                   <CharDetail data={response?.status} title="Status: " />
@@ -90,8 +90,8 @@ const Character = (props: RouteComponentProps<{ id?: string }>) => {
                     error={errorOrigin}
                   />
 
-                  <div className="pt-10">
-                    <span className="my-3 flex justify-center items-center text-xl font-medium">
+                  <div className="char-layout_details_texts_table">
+                    <span className="">
                       Chapters that {response.name} featured on
                     </span>
 
