@@ -3,6 +3,7 @@ import Button from "../components/Button/Button"
 import Table from "../components/AllCharsTable/AllCharsTable"
 import useAllChars from "../hooks/useAllChars"
 import Loader from "react-loader-spinner"
+import Layout from "../components/Layout/Layout"
 
 function Home() {
   const [page, setPage] = useState<number>(1)
@@ -24,7 +25,7 @@ function Home() {
   }
 
   return (
-    <div className="flex flex-col h-screen items-center justify-center bg-red-100">
+    <Layout className="flex flex-col h-screen items-center justify-center bg-red-100">
       <div className="flex flex-col items-center">
         <h1 className="py-10 font-semibold text-2xl">
           Rick and Morty Charchters
@@ -63,7 +64,7 @@ function Home() {
           </Button>
         </div>
       </div>
-    </div>
+    </Layout>
   )
 }
 
