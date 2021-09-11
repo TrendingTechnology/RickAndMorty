@@ -43,7 +43,7 @@ const Character = (props: RouteComponentProps<{ id?: string }>) => {
         <ImArrowLeft />
       </div>
       {loading ? (
-        <div className="w-full flex items-center justify-center py-10">
+        <div className="char-layout--loader">
           <Loader
             type="Puff"
             color="#00BFFF"
