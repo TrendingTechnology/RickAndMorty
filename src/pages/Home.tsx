@@ -8,7 +8,6 @@ import usePagination from "../hooks/usePagination"
 function Home() {
   const { page, nextPageHandler, prevPageHandler } = usePagination()
 
-  // Get all characters data
   const { data, error, loading } = useAllChars(page)
 
   return (
@@ -25,7 +24,7 @@ function Home() {
             color="#00BFFF"
             height={100}
             width={100}
-            timeout={3000} //3 secs
+            timeout={3000}
           />
         ) : (
           data && <Table data={data} />

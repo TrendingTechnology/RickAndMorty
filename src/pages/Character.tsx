@@ -19,16 +19,12 @@ const Character = (props: RouteComponentProps<{ id?: string }>) => {
 
   const history = useHistory()
 
-  // Get character data
   const { response, loading, error, location, origin } = useAxios(id)
 
-  // Get character location data
   const { locationData, errorLocation } = useCharLocation(location)
 
-  // Get character origin data
   const { originData, errorOrigin } = useCharOrigin(origin)
 
-  // Get character episodes data
   const { episodesData, errorEpisodes } = useEpisodes(episodes)
 
   useEffect(() => {
