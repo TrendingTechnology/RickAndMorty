@@ -61,7 +61,7 @@ const Character = (props: RouteComponentProps<{ id?: string }>) => {
           )}
           <div>
             {response && (
-              <div className="flex flex-col items-center justify-center mx-10 md:mx-5">
+              <div className="flex flex-col items-center justify-center mx-10 md:mx-0">
                 <h2 id="title" className="my-10 text-2xl font-medium">
                   {response?.name}
                 </h2>
@@ -90,7 +90,7 @@ const Character = (props: RouteComponentProps<{ id?: string }>) => {
                     error={errorOrigin}
                   />
 
-                  <div className="pt-10 mx-10 md:mx-auto">
+                  <div className="pt-10">
                     <span className="my-3 flex justify-center items-center text-xl font-medium">
                       Chapters that {response.name} featured on
                     </span>
