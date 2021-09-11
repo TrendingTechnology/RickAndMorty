@@ -4,7 +4,13 @@ import { RouteComponentProps, useHistory } from "react-router"
 import Loader from "react-loader-spinner"
 import { ImArrowLeft } from "react-icons/im"
 import { useCharLocation, useCharOrigin, useEpisodes, useAxios } from "../hooks"
-import { CharDetail, CharTable, Layout } from "../components"
+import {
+  CharDetail,
+  CharTable,
+  Layout,
+  LocationDetails,
+  OriginDetails,
+} from "../components"
 
 const Character = (props: RouteComponentProps<{ id?: string }>) => {
   const [episodes, setEpisodes] = useState<string[]>([])
@@ -75,61 +81,18 @@ const Character = (props: RouteComponentProps<{ id?: string }>) => {
                   <CharDetail data={response?.species} title="Species: " />
                   <CharDetail data={response?.gender} title="Gender: " />
                   <CharDetail data={response?.status} title="Status: " />
-                  <CharDetail data={response?.name} title="Location: " />
 
-                  {errorLocation ? (
-                    <span>{errorLocation}</span>
-                  ) : (
-                    locationData && (
-                      <div className="flex flex-col space-y-3">
-                        <CharDetail
-                          data={locationData?.residents?.length as number}
-                          title="Amount of residents: "
-                          list
-                        />
-
-                        <CharDetail
-                          data={locationData?.dimension as string}
-                          title="Dimension: "
-                          list
-                        />
-                        <CharDetail
-                          data={locationData?.type as string}
-                          title="Type: "
-                          list
-                        />
-                      </div>
-                    )
-                  )}
-
-                  <CharDetail
-                    data={response?.origin.name}
-                    className="pt-5"
-                    title="Origin: "
+                  <LocationDetails
+                    response={response}
+                    mainData={locationData}
+                    error={errorLocation}
                   />
-                  {errorOrigin ? (
-                    <span>{errorOrigin}</span>
-                  ) : (
-                    originData && (
-                      <div className="flex flex-col space-y-3">
-                        <CharDetail
-                          data={originData?.residents?.length as number}
-                          title="Amount of residents: "
-                          list
-                        />
-                        <CharDetail
-                          data={originData?.dimension as string}
-                          title="Dimension: "
-                          list
-                        />
-                        <CharDetail
-                          data={originData?.type as string}
-                          title="Type: "
-                          list
-                        />
-                      </div>
-                    )
-                  )}
+
+                  <OriginDetails
+                    response={response}
+                    mainData={originData}
+                    error={errorOrigin}
+                  />
 
                   <div className="pt-10 mx-10 md:mx-auto">
                     <span className="my-3 flex justify-center items-center text-xl font-medium">
