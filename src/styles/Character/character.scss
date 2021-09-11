@@ -22,4 +22,45 @@
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
   }
+
+  &_details {
+    // flex flex-col items-center justify-center mx-10 md:mx-0
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+
+    @media (min-width: 768px) {
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+
+    &_texts {
+      margin-top: 2.5rem;
+      margin-bottom: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      :not([hidden]) ~ :not([hidden]) {
+        --tw-space-y-reverse: 0;
+        margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
+        margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
+      }
+      &_table {
+        padding-top: 2.5rem;
+        span {
+          margin-top: 0.75rem /* 12px */;
+          margin-bottom: 0.75rem /* 12px */;
+          font-size: 1.25rem /* 20px */;
+          line-height: 1.75rem /* 28px */;
+          font-weight: 500;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
 }
