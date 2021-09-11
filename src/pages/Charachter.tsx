@@ -9,6 +9,7 @@ import useCharLocation from "../hooks/useCharLocation"
 import useCharOrigin from "../hooks/useCharOrigin"
 import useEpisodes from "../hooks/useEpisodes"
 import CharTable from "../components/CharTable/CharTable"
+import Layout from "../components/Layout/Layout"
 
 const Charachter = (props: RouteComponentProps<{ id?: string }>) => {
   const [episodes, setEpisodes] = useState<string[]>([])
@@ -17,12 +18,16 @@ const Charachter = (props: RouteComponentProps<{ id?: string }>) => {
 
   const history = useHistory()
 
+  // Get character data
   const { response, loading, error, location, origin } = useAxios(id)
 
+  // Get character location data
   const { locationData, errorLocation } = useCharLocation(location)
 
+  // Get character origin data
   const { originData, errorOrigin } = useCharOrigin(origin)
 
+  // Get character episodes data
   const { episodesData, errorEpisodes } = useEpisodes(episodes)
 
   useEffect(() => {
@@ -34,7 +39,7 @@ const Charachter = (props: RouteComponentProps<{ id?: string }>) => {
   }
 
   return (
-    <div className="bg-red-100 min-h-screen min-w-screen">
+    <Layout className="bg-red-100 min-h-screen min-w-screen">
       <div className="p-5 cursor-pointer" onClick={handleHomePage}>
         <ImArrowLeft className="w-10 h-6 fixed" />
       </div>
@@ -146,7 +151,7 @@ const Charachter = (props: RouteComponentProps<{ id?: string }>) => {
           </div>
         </div>
       )}
-    </div>
+    </Layout>
   )
 }
 
