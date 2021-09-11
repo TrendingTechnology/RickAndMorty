@@ -7,7 +7,6 @@ import Adapter from "@wojtekmaj/enzyme-adapter-react-17"
 import toJson from "enzyme-to-json"
 import { Router } from "react-router-dom"
 import { createMemoryHistory } from "history"
-import CharDetail from "./components/CharDetail/CharDetail"
 
 Enzyme.configure({ adapter: new Adapter() })
 afterEach(cleanup)
