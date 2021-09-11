@@ -10,7 +10,7 @@ const Table: React.FC<TableProps> = ({ data }) => {
   const history = useHistory()
 
   const openCharacter = (id: number) => {
-    history.push(`/charachter/${id}`, "_blank")
+    history.push(`/character/${id}`, "_blank")
   }
   return (
     <div className="w-full flex justify-center">
