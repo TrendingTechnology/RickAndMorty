@@ -12,8 +12,15 @@ exports[`snapshot test snapshot test Home page 1`] = `
     >
       Rick and Morty Charchters
     </h1>
-    <Table
-      data={Array []}
+    <Loader
+      className=""
+      color="#00BFFF"
+      height={100}
+      style={Object {}}
+      timeout={3000}
+      type="Puff"
+      visible={true}
+      width={100}
     />
     <div
       className="w-full flex items-center space-x-5 justify-between my-5"
@@ -29,7 +36,7 @@ exports[`snapshot test snapshot test Home page 1`] = `
         className="text-xl "
         id="page"
       >
-        page : 
+        Page: 
         1
       </span>
       <Button
