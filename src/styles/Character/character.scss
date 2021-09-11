@@ -2,10 +2,10 @@
   --tw-bg-opacity: 1;
   background-color: rgba(254, 226, 226, var(--tw-bg-opacity));
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
 
   &--icon {
-    padding: 1.25rem /* 20px */;
+    padding: 1.25rem;
     cursor: pointer;
     svg {
       width: 2.5rem;
