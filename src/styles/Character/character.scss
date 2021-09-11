@@ -1,0 +1,16 @@
+.char-layout {
+  --tw-bg-opacity: 1;
+  background-color: rgba(254, 226, 226, var(--tw-bg-opacity));
+  min-height: 100vh;
+  min-width: 100vw;
+
+  &--icon {
+    padding: 1.25rem /* 20px */;
+    cursor: pointer;
+    svg {
+      width: 2.5rem;
+      height: 1.5rem;
+      position: fixed;
+    }
+  }
+}
