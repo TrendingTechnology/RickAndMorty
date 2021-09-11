@@ -32,7 +32,10 @@ const useEpisodes = (allEpisodes: string[]) => {
             setEpisodesData(data)
           })
         )
-        .catch((err) => setErrorEpisodes(err))
+        .catch((err) => {
+          setErrorEpisodes(err)
+          console.log("error: ", err)
+        })
         .finally(() => {
           setTimeout(() => {
             setLoadingEpisodes(false)

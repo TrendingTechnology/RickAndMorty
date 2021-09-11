@@ -17,6 +17,7 @@ const useCharLocation = (url: string) => {
       })
       .catch((err) => {
         setErrorLocation("No location url provided")
+        console.log("error: ", err)
       })
       .finally(() => {
         setTimeout(() => {

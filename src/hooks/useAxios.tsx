@@ -21,6 +21,7 @@ const useAxios = (id: number) => {
       })
       .catch((err) => {
         setError(err)
+        console.log("error: ", err)
       })
       .finally(() => {
         setTimeout(() => {

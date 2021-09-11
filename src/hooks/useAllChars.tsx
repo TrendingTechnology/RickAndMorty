@@ -16,7 +16,10 @@ const useAllChars = (page: number) => {
       .then((res) => {
         setData(res.data.results)
       })
-      .catch((err) => setError("Can't fetch data"))
+      .catch((err) => {
+        setError("Can't fetch data")
+        console.log("error: ", err)
+      })
       .finally(() => {
         setTimeout(() => {
           setloading(false)

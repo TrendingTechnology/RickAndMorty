@@ -16,6 +16,7 @@ const useCharOrigin = (url: string) => {
       })
       .catch((err) => {
         setErrorOrigin("There is no origin url")
+        console.log("error: ", err)
       })
       .finally(() => {
         setTimeout(() => {
