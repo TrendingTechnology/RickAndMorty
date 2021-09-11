@@ -1,17 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react"
 import { RouteComponentProps, useHistory } from "react-router"
-import useAxios from "../hooks/useAxios"
 import Loader from "react-loader-spinner"
 import { ImArrowLeft } from "react-icons/im"
-import CharDetail from "../components/CharDetail/CharDetail"
-import useCharLocation from "../hooks/useCharLocation"
-import useCharOrigin from "../hooks/useCharOrigin"
-import useEpisodes from "../hooks/useEpisodes"
-import CharTable from "../components/CharTable/CharTable"
-import Layout from "../components/Layout/Layout"
+import { useCharLocation, useCharOrigin, useEpisodes, useAxios } from "../hooks"
+import { CharDetail, CharTable, Layout } from "../components"
 
-const Charachter = (props: RouteComponentProps<{ id?: string }>) => {
+const Character = (props: RouteComponentProps<{ id?: string }>) => {
   const [episodes, setEpisodes] = useState<string[]>([])
 
   const id = Number(props.match.params.id)
@@ -31,7 +26,9 @@ const Charachter = (props: RouteComponentProps<{ id?: string }>) => {
   const { episodesData, errorEpisodes } = useEpisodes(episodes)
 
   useEffect(() => {
-    setEpisodes(response?.episode as string[])
+    if (response) {
+      setEpisodes(response?.episode)
+    }
   }, [id, response])
 
   const handleHomePage = () => {
@@ -155,4 +152,4 @@ const Charachter = (props: RouteComponentProps<{ id?: string }>) => {
   )
 }
 
-export default React.memo(Charachter)
+export default React.memo(Character)
