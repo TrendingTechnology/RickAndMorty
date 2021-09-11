@@ -1,5 +1,5 @@
 import { Route, Switch } from "react-router"
-import Charachter from "./pages/Charachter"
+import Character from "./pages/Character"
 import Home from "./pages/Home"
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
     <>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/charachter/:id" component={Charachter} />
+        <Route path="/character/:id" component={Character} />
       </Switch>
     </>
   )
