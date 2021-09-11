@@ -1,0 +1,6 @@
+export { default as useAllChars } from "./useAllChars"
+export { default as useAxios } from "./useAxios"
+export { default as useCharLocation } from "./useCharLocation"
+export { default as useCharOrigin } from "./useCharOrigin"
+export { default as useEpisodes } from "./useEpisodes"
+export { default as usePagination } from "./usePagination"
