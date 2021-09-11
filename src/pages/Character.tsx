@@ -36,9 +36,9 @@ const Character = (props: RouteComponentProps<{ id?: string }>) => {
   }
 
   return (
-    <Layout className="bg-red-100 min-h-screen min-w-screen">
-      <div className="p-5 cursor-pointer" onClick={handleHomePage}>
-        <ImArrowLeft className="w-10 h-6 fixed" />
+    <Layout className="char-layout">
+      <div className="char-layout--icon" onClick={handleHomePage}>
+        <ImArrowLeft />
       </div>
       {loading ? (
         <div className="w-full flex items-center justify-center py-10">
