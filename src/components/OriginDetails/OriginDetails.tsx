@@ -19,6 +19,7 @@ const OriginDetails: React.FC<OriginDetailsProps> = ({
         data={response?.origin.name}
         className="pt-5"
         title="Origin: "
+        dataTestid="origin"
       />
       {error ? (
         <span>{error}</span>
@@ -29,13 +30,20 @@ const OriginDetails: React.FC<OriginDetailsProps> = ({
               data={mainData?.residents?.length as number}
               title="Amount of residents: "
               list
+              dataTestid="amount of residents "
             />
             <CharDetail
               data={mainData?.dimension as string}
               title="Dimension: "
               list
+              dataTestid="dimension"
             />
-            <CharDetail data={mainData?.type as string} title="Type: " list />
+            <CharDetail
+              dataTestid="type"
+              data={mainData?.type as string}
+              title="Type: "
+              list
+            />
           </div>
         )
       )}

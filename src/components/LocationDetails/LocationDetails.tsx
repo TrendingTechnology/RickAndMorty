@@ -15,7 +15,11 @@ const LocationDetails: React.FC<LocationDetailsProps> = ({
 }) => {
   return (
     <>
-      <CharDetail data={response?.name} title="Location: " />
+      <CharDetail
+        dataTestid="Location"
+        data={response?.name}
+        title="Location: "
+      />
 
       {error ? (
         <span>{error}</span>
@@ -25,15 +29,22 @@ const LocationDetails: React.FC<LocationDetailsProps> = ({
             <CharDetail
               data={mainData?.residents?.length as number}
               title="Amount of residents: "
+              dataTestid="amount of residents"
               list
             />
 
             <CharDetail
               data={mainData?.dimension as string}
               title="Dimension: "
+              dataTestid="dimension"
               list
             />
-            <CharDetail data={mainData?.type as string} title="Type: " list />
+            <CharDetail
+              dataTestid="type"
+              data={mainData?.type as string}
+              title="Type: "
+              list
+            />
           </div>
         )
       )}
