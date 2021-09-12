@@ -74,9 +74,21 @@ const Character = () => {
                   />
                 </div>
                 <div className="char-layout_details_texts">
-                  <CharDetail data={response?.species} title="Species: " />
-                  <CharDetail data={response?.gender} title="Gender: " />
-                  <CharDetail data={response?.status} title="Status: " />
+                  <CharDetail
+                    dataTestid="species"
+                    data={response?.species}
+                    title="Species: "
+                  />
+                  <CharDetail
+                    dataTestid="gender"
+                    data={response?.gender}
+                    title="Gender: "
+                  />
+                  <CharDetail
+                    dataTestid="status"
+                    data={response?.status}
+                    title="Status: "
+                  />
 
                   <LocationDetails
                     response={response}
