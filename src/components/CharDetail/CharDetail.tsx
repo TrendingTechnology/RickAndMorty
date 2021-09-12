@@ -4,6 +4,8 @@ interface CharDetailProps {
   list?: boolean
   data: string | number
   title: string
+  dataTestid: string
+
   className?: React.HTMLAttributes<HTMLSpanElement> | string
 }
 
@@ -12,15 +14,22 @@ const CharDetail: React.FC<CharDetailProps> = ({
   data,
   title,
   className = "",
+  dataTestid,
 }) => {
   return (
     <>
       {list ? (
-        <li className={`text-xl font-medium ${className}`}>
+        <li
+          data-testid={dataTestid}
+          className={`text-xl font-medium ${className}`}
+        >
           {title} {data}
         </li>
       ) : (
-        <span className={`text-xl font-medium ${className}`}>
+        <span
+          data-testid={dataTestid}
+          className={`text-xl font-medium ${className}`}
+        >
           {title} {data}
         </span>
       )}
