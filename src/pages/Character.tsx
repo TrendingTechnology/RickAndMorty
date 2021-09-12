@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react"
-import { RouteComponentProps, useHistory } from "react-router"
+import { useHistory, useParams } from "react-router"
 import Loader from "react-loader-spinner"
 import { ImArrowLeft } from "react-icons/im"
 import { useCharLocation, useCharOrigin, useEpisodes, useAxios } from "../hooks"
@@ -12,14 +12,14 @@ import {
   OriginDetails,
 } from "../components"
 
-const Character = (props: RouteComponentProps<{ id?: string }>) => {
+const Character = () => {
   const [episodes, setEpisodes] = useState<string[]>([])
 
-  const id = Number(props.match.params.id)
+  const { id }: any = useParams()
 
   const history = useHistory()
 
-  const { response, loading, error, location, origin } = useAxios(id)
+  const { response, loading, error, location, origin } = useAxios(+id)
 
   const { locationData, errorLocation } = useCharLocation(location)
 
