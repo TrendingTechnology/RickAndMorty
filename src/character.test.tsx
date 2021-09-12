@@ -1,54 +1,86 @@
-import { cleanup, render, screen, waitFor } from "@testing-library/react"
-import { renderHook } from "@testing-library/react-hooks"
-
-import toJson from "enzyme-to-json"
-
+import { cleanup, render, screen } from "@testing-library/react"
 import { Router, Route } from "react-router-dom"
 import { createMemoryHistory } from "history"
-import Enzyme from "enzyme"
-import Adapter from "@wojtekmaj/enzyme-adapter-react-17"
 import Character from "pages/Character"
-import { useAxios, useEpisodes } from "hooks"
 import { act } from "react-dom/test-utils"
+import useAxios from "./hooks/useAxios"
+import useEpisodes from "./hooks/useEpisodes"
+import useCharOrigin from "./hooks/useCharOrigin"
+import useCharLocation from "./hooks/useCharLocation"
+import mockedCharacter from "./mockCharacterResponse.json"
+import { Character as CharacterType } from "./interfaces/types"
 
-Enzyme.configure({ adapter: new Adapter() })
+jest.mock("./hooks/useAxios")
+jest.mock("./hooks/useEpisodes")
+jest.mock("./hooks/useCharOrigin")
+jest.mock("./hooks/useCharLocation")
+
 afterEach(cleanup)
 
 test("click on button", async () => {
   const history = createMemoryHistory()
   history.push("/character/1")
 
-  // const { getByText } = render(
-  //   <Router history={history} >
-  //     <Character  />
-  //   </Router>
-  // )
+  const mockedUseAxios = useAxios as jest.MockedFunction<typeof useAxios>
 
-  const id = 1
+  mockedUseAxios.mockImplementation(() => ({
+    response: mockedCharacter.data as CharacterType,
+    error: "",
+    loading: false,
+    location: "",
+    origin: "",
+  }))
 
-  const { result } = renderHook(() => useAxios(id))
+  const mockedUseEpisodes = useEpisodes as jest.MockedFunction<
+    typeof useEpisodes
+  >
+  mockedUseEpisodes.mockImplementation(() => ({
+    episodesData: [],
+    errorEpisodes: "",
+    loadingEpisodes: false,
+  }))
 
-  // const { result: res2 } = renderHook(() =>
-  //   useEpisodes(result.current.response?.episode)
-  // )
+  const mockedUseCharOrigin = useCharOrigin as jest.MockedFunction<
+    typeof useCharOrigin
+  >
+  mockedUseCharOrigin.mockImplementation(() => ({
+    originData: {
+      name: "",
+      created: new Date(),
+      dimension: "",
+      id: 1,
+      residents: [],
+      type: "",
+    },
+    errorOrigin: "",
+    loadingOrigin: false,
+  }))
 
-  const { getByText, container } = render(
-    <Router history={history}>
-      <Route path="/character/:id">
-        <Character />
-      </Route>
-    </Router>
-  )
-
-  //
-  // act(() => {
-  // })
+  const mockedUseCharLocation = useCharLocation as jest.MockedFunction<
+    typeof useCharLocation
+  >
+  mockedUseCharLocation.mockImplementation(() => ({
+    locationData: {
+      created: new Date(),
+      dimension: "",
+      id: 1,
+      name: "",
+      residents: [],
+      type: "",
+    },
+    errorLocation: "",
+    loadingLocation: false,
+  }))
 
   act(() => {
-    console.log("response: ", result.current.response)
+    render(
+      <Router history={history}>
+        <Route path="/character/:id">
+          <Character />
+        </Route>
+      </Router>
+    )
   })
 
-  // test if chardetail component props is a text
-
-  // expect(screen.getByAltText("Species:")).toHaveTextContent("Human")
+  expect(screen.getByTestId("species")).toHaveTextContent("Human")
 })
