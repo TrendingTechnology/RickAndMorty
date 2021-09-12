@@ -17,7 +17,7 @@ jest.mock("./hooks/useCharLocation")
 
 afterEach(cleanup)
 
-test("click on button", async () => {
+test("mock axios fetch", async () => {
   const history = createMemoryHistory()
   history.push("/character/1")
 
