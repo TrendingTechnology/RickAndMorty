@@ -14,9 +14,11 @@ const CharTable: React.FC<CharTableProps> = ({ data }) => {
   return (
     <table className="border border-black">
       <thead className="p-2 uppercase">
-        <th className="">Id</th>
-        <th>Name</th>
-        <th>Date</th>
+        <tr>
+          <th className="">Id</th>
+          <th>Name</th>
+          <th>Date</th>
+        </tr>
       </thead>
       <tbody className="p-2">
         {data?.map((item: EpisodesType) => (
