@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react"
 import { useHistory, useParams } from "react-router"
 import Loader from "react-loader-spinner"
