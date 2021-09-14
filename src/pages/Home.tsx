@@ -14,7 +14,7 @@ function Home() {
     <Layout className="home-layout">
       <div className="home-layout_container">
         <h1 className="home-layout_container_title">
-          Rick and Morty Charchters
+          Rick and Morty Characters
         </h1>
         {error ? (
           <span>{error}</span>
